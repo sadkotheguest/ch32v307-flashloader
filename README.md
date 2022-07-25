@@ -18,11 +18,11 @@ To build the flashloader, only a Rust compiler with support for RISCV must be in
 See http://rustup.rs for installation instructions for Rust. The riscv target can be added
 using rustup:
 
-   rustup target install riscv32imac-unknown-none-elf
+   `rustup target install riscv32imac-unknown-none-elf`
 
 The flash loader can then be compiled using cargo:
 
-   cargo build --release
+   `cargo build --release`
 
 The resulting binary can be found in `target/riscv32imac-unknown-none-elf/release/ch32v307-flashloader`.
 
