@@ -1,0 +1,20 @@
+[package]
+name = "ch32v307-flashloader"
+version = "0.1.0"
+authors = ["Alexander Buraga <sadkotheguest@yandex.ru>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Todo: avoid all panics
+# panic-never  = "0.1.0"
+panic-abort = "0.3.2"
+ch32v307-pac = "0.1.0"
+
+
+[profile.release]
+codegen-units = 1 # better optimizations
+debug = true # symbols are nice and they don't increase the size on Flash
+lto = true # better optimizations
+opt-level = 3

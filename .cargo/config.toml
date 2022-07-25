@@ -1,0 +1,14 @@
+[target.riscv32imac-unknown-none-elf]
+rustflags = [
+    "-C", "link-arg=-Tloader.x",
+    "-C", "link-args=-Map=ch32v307-loader.map",
+    "-C", "link-args=--nmagic",
+
+    # We don't know where the flash loader will be
+    # placed in memory, so we need to create
+    # position independent code (pic).
+    "-C", "relocation-model=pic",
+]
+
+[build]
+target = "riscv32imac-unknown-none-elf"
